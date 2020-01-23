@@ -1,7 +1,5 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-
-
 <!doctype html>
 <html lang=fr>
 <head>
@@ -15,15 +13,24 @@
 
 </head>
 <body>
-<br>
-<nav>
+
+
+<%  %>
+<%  %>
+
+<%  %>
+
+
+
+
+<nav style="background-image: url('img/banner.jpg'); background-size: 100% ;">
     <div>
-        <a href="index.jsp" class="btn btn-outline-dark">I<small class="text-muted">ndex</small></a>
-        <a href="index.jsp" class="btn btn-outline-dark">M<small class="text-muted">atch</small></a>
-        <a href="index.jsp" class="btn btn-outline-dark">C<small class="text-muted">ompetition</small></a>
-        <a href="Arbre.jsp" class="btn btn-outline-dark">A<small class="text-muted">rbre</small></a>
-        <a href="index.jsp" class="btn btn-outline-dark">R<small class="text-muted">esultat</small></a>
-        <a href="index.jsp" class="btn btn-outline-dark">A<small class="text-muted"> Propos</small></a>
+        <a href="index.jsp" class="btn btn-outline-warning">I<small class="text-muted">ndex</small></a>
+        <a href="index.jsp" class="btn btn-outline-warning">M<small class="text-muted">atch</small></a>
+        <a href="index.jsp" class="btn btn-outline-warning">C<small class="text-muted">ompetition</small></a>
+        <a href="Arbre.jsp" class="btn btn-outline-warning">A<small class="text-muted">rbre</small></a>
+        <a href="index.jsp" class="btn btn-outline-warning">R<small class="text-muted">esultat</small></a>
+        <a href="index.jsp" class="btn btn-outline-warning">A<small class="text-muted"> Propos</small></a>
     </div>
 </nav>
 
