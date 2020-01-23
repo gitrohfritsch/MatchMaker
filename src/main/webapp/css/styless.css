@@ -1,0 +1,391 @@
+
+/*
+  Définir la taille de police par défaut
+  http://www.pompage.net/traduction/dimensionner-ses-fontes-avec-rem
+  https://developer.mozilla.org/fr/docs/Web/CSS/font-size
+
+  L'unité de police rem (qui signifie « root em ») se raporte à la taille définie par défaut,
+  soit celle de la balise HTML (16px par défaut definit dans les préférences du navigateur)
+
+  Définir la taille de HTML à 10px, puis ramener à 1.6rem sur body
+*/
+html {
+	font-size : 62.5%; /* 1rem = 10px */
+	scroll-behavior : smooth;
+}
+
+/*
+  Définir les polices de caractères
+  https://developer.mozilla.org/fr/docs/Web/CSS/font-family
+  https://www.alsacreations.com/article/lire/631-quelles-polices-pour-un-site-web.html
+    -> jeu de polices standards suceptitble d'être installé sur l'ensemble des systèmes
+    -> police non standard : nécessité d'envoyer le fichier de police sur le poste du navigateur
+
+*/
+
+
+body {
+	/* On revient à 16px par défaut (héritage pour tous les éléments enfants)*/
+	/* font-size: 1.6rem; */
+	/* Choix d'un jeu de polices standard */
+	font-family: Arial, Helvetica, sans-serif;
+	/* Définir une couleur de texte par défaut */
+	color : #212121;
+	background-color : #a5a4a4;
+	margin: 0;
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	border: 0;
+  
+}
+
+/*
+  Choix d'une police non standard pour les titres
+  Utilisation d'un service externe dans un premier temps
+
+*/
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+/* Alignement du texte : center le titre h1 */
+h1 {
+	font-size: 200%;
+	text-align : center;
+	color : #607D8B;
+}
+
+/* Définir une autre couleur de texte pour les titres */
+h2 {
+  color : #00BCD4;
+}
+
+h3 {
+  color : #455A64;
+}
+
+h4 {
+  /* Texte en majuscule : https://developer.mozilla.org/fr/docs/Web/CSS/text-transform */
+  text-transform : uppercase;
+}
+h6 {
+	max-width: 992px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #235033;
+	font-size: 200%;
+	color : #37d6e5;
+}
+
+
+/*
+  Les styles de liens
+  https://www.alsacreations.com/astuce/lire/43-Comment-definir-lapparence-de-ses-liens.html
+*/
+
+a {
+  color : #37d6e5;
+  /* Supprimer le soulignement */
+  text-decoration : none;
+}
+
+/* Les styles de liens : les pseudos classes
+  :hover : survolés
+  :focus : clavier
+  :active : au relachement du clic
+*/
+a:hover {
+	text-decoration : underline;
+	color : navy;
+}
+
+
+a:focus,
+a:active {
+  /* Rétablir le soulignement */
+  /*text-decoration : underline;*/
+  text-decoration : none;
+  
+}
+
+p {
+  /*
+    Augmenter la hauteur de ligne pour aérer le texte
+    Sans unité, 1.8 signifie 1.8 fois la taille de police
+  */
+  line-height : 1.8;
+  margin-bottom : 0;
+  
+}
+hr {
+	margin-top: 0;
+	margin-bottom: 0;
+
+	height : 2em;
+	border : 0;
+	
+	padding-top: 0;
+	padding-bottom: 0;
+}
+div {
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color : white;
+	
+}
+/*appliquer une régle à toute une classe (class="section")*/
+
+.section {
+	border-radius: 10px;
+	max-width : 992px;
+	border : 0;
+	margin-left : auto;
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color : #FFF;
+	padding-left: 2em;
+	
+}
+
+img {
+	border: 0;
+	margin: 0;
+	
+}
+
+.menu {
+	height: 1.6em;
+	margin-top: .9em;
+	margin-bottom: .5em;
+	border-radius: 10px;
+}
+	
+/* Navigation dans la bannière */
+
+/* cible les class="banner" */
+.banner {
+	
+	background: #235043;
+	padding-top: 5em;
+	padding-bottom: 5em;
+
+	
+}
+.banner-logo{
+	text-align: left;
+	color: #eee
+}
+
+.banner-logo strong {
+	color: #FFFFFF;
+}
+.banner-logo a {
+	text-decoration: none;
+	color : grey;
+	text-align: left;
+}
+.banner-logo-title {
+	display : block;
+	color: #fff;
+	font-size: 1.2em;
+		
+}
+.banner-menu {
+	display: inline-block;
+}
+
+
+header nav {
+	border-radius: 10px;
+	max-width: 992px;
+	margin : 0 auto;
+	background: #235043;
+	padding: 1em;
+}
+
+header nav a {
+	border: 20px;
+	border-color: grey;
+	border-radius: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	background-color: #007b66;
+	padding: 1em;
+	/* display: inline-block; */
+}
+
+header nav a:hover, header nav a.focus {
+	
+	text-decoration: none;
+	background: #f7e312;
+	transition-property: background;
+	transition-duration: 1s;
+	transition-timing-function: ease-in;
+	transition-delay: .2s;
+	
+}
+
+/* Navigation interne de la page */
+
+main nav {
+	border-radius: 10px;
+	max-width: 992px;
+	margin : 0 auto;
+	background: #235033;
+	padding: 1em;
+	text-align: center;
+}
+
+main nav a {
+	border: 20px;
+	border-color: grey;
+	border-radius: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+	background-color: #007b66;
+	padding: 1em;
+	/* display: inline-block; */
+}
+
+main nav a:hover, main nav a.focus {
+	
+	text-decoration: none;
+	background: #f7e312;
+	transition-property: background;
+	transition-duration: 1s;
+	transition-timing-function: ease-in;
+	transition-delay: .2s;
+	
+	
+	
+}
+
+
+/* Pied de page */
+
+
+
+footer p {
+	color: #FFFFFF;
+	text-align: center;
+	background-color: green;
+	height: 5em;
+	clear : both;
+}
+
+#goTop {
+	font-size : 3em;
+	position : fixed;
+	bottom : 10px;
+	right : 20px;
+}
+
+
+/* Tableaux */
+
+th {
+	background-color: #dddddd;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	radius: 10px;
+}
+
+td {
+	border: 1px solid #333;
+	padding : .4em;
+
+	border-radius: 10px;
+	
+	
+}
+table{
+	
+	font-size: 1.2em;
+	border-spacing : 2px;
+	border-width: 2px;
+	border-color : black;
+	
+}
+
+
+
+td:first-child {
+	font-size : 1rem;
+}
+
+/*cible les lignes impaires === pour les lignes paires : tr:nth-child(even) */
+tr:nth-child(odd){
+	background-color: #dddddd;
+	
+}
+	
+
+/* Images */
+img {
+	max-width: 100%;
+	border-radius: 10px;
+}
+
+/* Float */
+.float-left{
+	float: right;
+	width : 40%;
+}
+.float-right{
+	float: left;
+	width: 40%;
+}
+
+article {
+	overflow: hidden;
+}
+
+#box1 {
+	background : #ccc;
+/*	height: 30px;	  */
+/*	overflow: scroll; */
+	overflow: auto;
+	
+}
+
+.banner-menu{
+	float: right;
+	height: 30px;
+}
+
+
+.container {
+	background-color : #235043;
+	max-width: 972px;
+	margin: 0 auto; 
+}
+.container strong{
+	font-size : 2em;
+}
+
+/* GALERIE */
+
+.main-header {
+	background-image: url("../img/nut.jpg");
+	height: 80vh;
+	background-repeat: no-repeat;
+	background-size: 100% auto; 
+	/* background-size: cover; etire l'image, */
+	/* "           "    contains; fait entrer complétement l'image quitte à la tasser */
+	background-position: center;
+	/* center center (sur l'axe horizontal, et sur l'axe vertical. center bottom, centre horizontalement et vers le bas. */
+	color : white;
+	
+	}
+	
+.main-header h1 {
+	color: #FFFFFF;
+	background-color: none;
+	
+}
+
