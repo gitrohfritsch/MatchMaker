@@ -1,7 +1,6 @@
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+package matchmaker;
+
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,12 +12,12 @@ public class Request {
 
     public List<User> findAll() throws SQLException {
 
-        String request = "SELECT id, username, email FROM _USER";
-
+        String request = "SELECT id, level, nickname FROM _USER";
         Connection conn = null;
         Statement stmt = null;
         ResultSet resultSet = null;
         try {
+
             conn = connection.create();
             stmt = conn.createStatement();
             resultSet = stmt.executeQuery(request);

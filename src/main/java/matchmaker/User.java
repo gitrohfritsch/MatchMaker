@@ -1,3 +1,5 @@
+package matchmaker;
+
 public class User {
 
     private int id;
@@ -12,7 +14,7 @@ public class User {
         this.id = id;
     }
 
-    public String getUserName() {
+    public String getNickname() {
         return nickname;
     }
 

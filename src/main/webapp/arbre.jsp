@@ -6,7 +6,7 @@
 <html lang=fr>
 <head>
     <meta charset="utf-8">
-    <title>MatchMaker : Make match not war !</title>
+    <title>MatchMaker : Tree view</title>
 
     <link href="css/all.min.css" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
@@ -39,30 +39,7 @@
 
 <h1>M<small class="text-muted">atch</small> M<small class="text-muted">aker</small></h1>
 
-<table class="table table-striped">
-    <thead class="thead-dark" >
 
-    <TR >
-        <th scope="col">Name</th>
-        <th scope="col">Rank</th>
-        <th scope="col">Level</th>
-        <th scope="col">Divers</th>
-        <th scope="col">Action</th>
-    </TR>
-    </thead>
-
-    <tbody>
-<%
-    Request myTests = new Request();
-    List<User> list = myTests.findAll();
-
-
-    for(int i = 0 ; i < list.size(); i++){
-        out.println("<tr><td>"+list.get(i).getNickname()+"</td><td>"+list.get(i).getLevel()+"</td><td></td><td></td><td><a href=''>Match</a> <a href=''>Competion</a> <a href=''>Edition</a></td></tr>");
-    }
-%>
-    </tbody>
-</table>
 
 </body>
 </html>
