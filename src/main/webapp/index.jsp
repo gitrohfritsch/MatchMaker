@@ -58,10 +58,11 @@
 
 
     for(int i = 0 ; i < list.size(); i++){
-        out.println("<tr><td>"+list.get(i).getNickname()+"</td><td>"+list.get(i).getLevel()+"</td><td></td><td></td><td><a href=''>Match</a> <a href=''>Competion</a> <a href=''>Edition</a></td></tr>");
+        out.println("<tr><td>"+list.get(i).getNickname()+"</td><td>"+list.get(i).getLevel()+"</td><td></td><td></td><td><a class='btn btn-dark' href=''>Match</a> <a class='btn btn-dark' href=''>Competition</a> <a class='btn btn-dark' href=''>Edition</a></td></tr>");
     }
 %>
     </tbody>
+
 </table>
 
 </body>
