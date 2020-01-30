@@ -1,4 +1,4 @@
-package dao.impl;
+package model;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,7 +11,7 @@ public interface Dao<T> {
 
         void save(T t);
 
-        void update(T t, String[]params);
+        void update(T t, int[]params);
 
         void delete(T t);
     }

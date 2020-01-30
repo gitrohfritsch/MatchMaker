@@ -1,6 +1,10 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@page import="matchmaker.*" %>
+<%@page import="model.*" %>
+<%@page import="model.MatchDao" %>
+<%@page import="entity.*" %>
 <%@page import="java.util.*" %>
+<%@page import="javax.persistence.*" %>
 
 <!doctype html>
 <html lang=fr>
@@ -14,16 +18,9 @@
     <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
-
-
-<%
-
- %>
-<%  %>
-
-<%  %>
-
-
+<% EntityManagerFactory entity = Persistence.createEntityManagerFactory("jpa-unit"); %>
+<% MatchDao matchtest = new MatchDao(entity); %>
+<%=matchtest.getMatch(1).getPlayer2() %>
 
 
 <nav style="background-image: url('img/banner.jpg'); background-size: 100% ;">

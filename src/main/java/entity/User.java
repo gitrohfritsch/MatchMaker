@@ -1,4 +1,4 @@
-package matchmaker;
+package entity;
 
 public class User {
 
