@@ -19,7 +19,8 @@
 </head>
 <body>
 <% EntityManagerFactory entity = Persistence.createEntityManagerFactory("jpa-unit"); %>
-<% MatchDao matchtest = new MatchDao(entity); %>
+<% EntityManager em =  entity.createEntityManager(); %>
+<% MatchDao matchtest = new MatchDao(em); %>
 <%=matchtest.getMatch(1).getPlayer2() %>
 
 

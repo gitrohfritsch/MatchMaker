@@ -1,8 +1,6 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "MatchList")
@@ -12,13 +10,14 @@ public class Match {
     private int id;
     private int player1;
     private int player2;
+    private int status;
 
     //contructeur
-    public Match(int i, int i1, int i2) {
-        id = i;
-        player1 = i1;
-        player2 = i2;
-    }
+//    public Match(int i, int i1, int i2) {
+//       this.id = i;
+//       this.player1 = i1;
+//       this.player2 = i2;
+//    }
 
     //Getter Setter
     public int getId() {
@@ -53,14 +52,8 @@ public class Match {
         this.status = status;
     }
 
-    private int status;
 
-    public Match(int id, int player1, int player2, int status) {
-        this.id = id;
-        this.player1 = player1;
-        this.player2 = player2;
-        this.status = status;
-    }
+
 
 //=========================================================================
 

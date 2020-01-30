@@ -1,9 +1,5 @@
 package matchmaker;
 
-import model.Dao;
-import model.MatchDao;
-import entity.Match;
-
 public class MatchApplication {
 
 //    private static Dao matchDao;
