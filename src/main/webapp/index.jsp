@@ -1,7 +1,12 @@
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@page import="matchmaker.*" %>
+<%@page import="model.*" %>
+<%@page import="model.MatchDao" %>
+<%@page import="entity.*" %>
 <%@page import="java.util.*" %>
-
+<%@page import="javax.persistence.*" %>
+<% int numPage; %>
+<% int userPerPage = 6; %>
 <!doctype html>
 <html lang=fr>
 <head>
@@ -48,25 +53,54 @@
         <th scope="col">Level</th>
         <th scope="col">Divers</th>
         <th scope="col">Action</th>
+
     </TR>
     </thead>
 
     <tbody>
 <%
-    Request myTests = new Request();
-    List<User> list = myTests.findAll();
+    /* Request myTests = new Request(); */
+    /* List<User> list = myTests.findAll(); */
 
+    EntityManagerFactory entity = Persistence.createEntityManagerFactory("jpa-unit");
+    EntityManager em =  entity.createEntityManager();
+    UserDao userDao = new UserDao(em);
+    if (request.getParameter("numPage") != null){
+        numPage = Integer.parseInt(request.getParameter("numPage"));
 
-    for(int i = 0 ; i < list.size(); i++){
-        out.println("<tr><td>"+list.get(i).getNickname()+"</td><td>"+list.get(i).getLevel()+"</td><td></td><td></td><td><a class='btn btn-dark' href=''>Match</a> <a class='btn btn-dark' href=''>Competition</a> <a class='btn btn-dark' href=''>Edition</a></td></tr>");
-    }
-%>
+        }
+        else
+        {
+         numPage = 1;
+        }
+    List<User> users = userDao.getAllBy(userPerPage ,numPage);
+
+    for(int i = 0 ; i < users.size(); i++){ %>
+        <tr>
+            <td><%=users.get(i).getNickname() %></td>
+            <td><%=users.get(i).getLevel() %></td>
+            <td></td>
+            <td></td>
+            <td>
+                <a class='btn btn-dark' href='match.jsp?id=<%=users.get(i).getId() %>'>Match</a>
+                <a class='btn btn-dark' href='competition.jsp?id=<%=users.get(i).getId() %>'>Competition</a>
+                <a class='btn btn-dark' href='player.jsp?id=<%=users.get(i).getId() %>&flag=EDIT'>Edition</a>
+            </td>
+        </tr>
+
+    <% } %>
+
     </tbody>
 
 </table>
-
-<%
+<% if (!(numPage <= 1)){ %>
+<a class='btn btn-dark' href='index.jsp?numPage=<%= (numPage-1) %>'> << </a>
+<% } %>
+<% if ( userDao.getAllBy(userPerPage, numPage + 1).size() != 0 ) { %>
+<a class='btn btn-dark' href='index.jsp?numPage=<%= (numPage+1) %>'> >> </a>
+<% }
 
 %>
 </body>
+<a class='btn btn-dark' href='player.jsp'>New Player</a>
 </html>
