@@ -93,7 +93,7 @@ if(request.getParameter("flag") != null && request.getParameter("flag").equals("
   <div class="form-group">
     <label for="nickname">Nickname</label>
     <input type="text" class="form-control" name="nickname" id="nickname" aria-describedby="nicknameHelp"
-    value='<%= (id == "")? user.getNickname() : "" %>'>
+    value='<%= (id == "")? "" : user.getNickname() %>'>
     <small id="nickname help" class="form-text text-muted">Enter Nickname</small>
   </div>
   <div class="form-group">
